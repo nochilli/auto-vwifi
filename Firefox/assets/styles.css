@@ -1,0 +1,185 @@
+@font-face {
+	font-family: "Space Grotesk";
+	font-style: normal;
+	font-weight: 300 700;
+	font-display: swap;
+	src: url("/font/Space\ Grotesk.woff2") format("woff2");
+}
+
+:root {
+	min-width: 300px;
+	max-width: 340px;
+	color-scheme: light dark;
+}
+
+.space-grotesk {
+	font-family: "Space Grotesk", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+}
+
+.header {
+	display: grid;
+	grid-template-columns: repeat(9, 34px);
+	align-items: center;
+	padding-bottom: 10px;
+}
+
+.header img {
+	grid-column: 1 / span 1;
+	width: 28px;
+	height: 28px;
+}
+
+.header h1 {
+	grid-column: 3 / span 5;
+	margin: 0;
+	font-size: 18px;
+	color: light-dark(#62709e, #cdd6f4);
+	font-weight: 600;
+}
+
+body {
+	background: light-dark(#eff1f5, #1e1e2e);
+	font-size: 15px;
+	align-items: center;
+	width: 30%;
+}
+
+.inputbox {
+	position: relative;
+	min-width: 285px;
+	width: auto;
+}
+
+form {
+	min-width: 285px;
+	padding-top: 25px;
+	border-top: 1px solid light-dark(#96c6c3, #acb0be);
+}
+
+input {
+	font-family: "Space Grotesk", sans-serif;
+	font-weight: 600;
+	position: relative;
+	width: 100%;
+	padding: 24px 10px 10px;
+	background: transparent;
+	outline: none;
+	box-shadow: none;
+	border: none;
+	color: #eff1f5;
+	font-size: 1em;
+	letter-spacing: 0.2em;
+	transition: 0.5s;
+	z-index: 10;
+}
+
+input[type="password"] {
+	font-size: 1em;
+	letter-spacing: 0.3em;
+	padding: 45px 10px 10px;
+}
+
+.inputbox span {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	font-weight: 600;
+	padding: 20px 15px 13px;
+	color: #5c5f77;
+	letter-spacing: 00.05em;
+	transition: 0.5s;
+	pointer-events: none;
+}
+
+.inputbox input:valid ~ span,
+.inputbox input:focus ~ span {
+	color: #3380a3ce;
+	transform: translateX(-10px) translateY(-34px);
+	font-size: 0, 75em;
+}
+
+.inputbox i {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background: #3380a3ce;
+	border-radius: 4px;
+	transition: 0.5s;
+	pointer-events: none;
+	z-index: 9;
+}
+
+.inputbox input:valid ~ i,
+.inputbox input:focus ~ i {
+	height: 44px;
+}
+
+.button-group {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	justify-content: space-evenly;
+	margin-top: 20px;
+	margin-left: 15px;
+}
+
+button {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	align-items: center;
+	width: 105px;
+	height: 40px;
+	border: none;
+	border-radius: 6px;
+	font-family: "Space Grotesk";
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.2s;
+	color: light-dark(#eff1f5, #1e1e2e);
+}
+
+#login {
+	grid-column: 1 / span 1;
+	background: light-dark(#77d458, #a6da95);
+}
+
+#login:hover {
+	transform: translateY(-1px);
+	background: #82e779;
+}
+
+#logout {
+	grid-column: 3 / span 1;
+	background: light-dark(#d45858, #ed8796);
+}
+
+#logout:hover {
+	transform: translateY(-1px);
+	background: #e77979;
+}
+
+#enable {
+	align-items: inherit;
+	width: 34px;
+	height: 30px;
+	border-radius: 15px;
+}
+
+#status {
+	margin-top: 16px;
+	min-width: 260px;
+	padding: 12px;
+	border-radius: 6px;
+	background: #b4befe8d;
+	text-align: center;
+}
+
+#status h5 {
+	margin: 0;
+	color: light-dark(#868e9d, #374151);
+	font-size: 20px;
+}

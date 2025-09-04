@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Auto VIT Wi-Fi",
+  "version": "1.1",
+  "description": "Never login to VIT Wi-Fi again! the extension automatically logs in to VIT Wi-Fi",
+  "icons": {
+    "16": "assets/vwifi16.png",
+    "48": "assets/vwifi48.png",
+    "128": "assets/vwifi128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://phc.prontonetworks.com/*"],
+      "js": ["login.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["font/*.woff2"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "permissions": ["storage", "notifications", "tabs", "webRequest"],
+  "action": {
+    "default_icon": "assets/vwifi48.png",
+    "default_popup": "popup.html"
+  },
+  "content_security_policy": {},
+  "host_permissions": ["http://phc.prontonetworks.com/*"],
+  "author": "NoChilli",
+  "homepage_url": "https://github.com/nochilli/auto-vwifi/"
+}

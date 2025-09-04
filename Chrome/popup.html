@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/styles.css" type="text/css" />
+		<title>Auto VIT Wi-Fi</title>
+		<meta charset="utf-8" />
+		<script src="popup.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<body class="space-grotesk">
+		<div style="padding: 20px">
+			<div class="header">
+				<img src="/assets/vwifi48.png" alt="Pronto Auto Login" />
+				<h1>Auto VIT Wi-FI</h1>
+				<button type="button" id="enable">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="icon icon-tabler icons-tabler-outline icon-tabler-power"
+					>
+						<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+						<path d="M7 6a7.75 7.75 0 1 0 10 0" />
+						<path d="M12 4l0 8" />
+					</svg>
+				</button>
+			</div>
+			<form id="form1">
+				<div class="inputbox">
+					<input
+						required="required"
+						type="text"
+						id="username"
+						autocomplete="username"
+					/>
+					<span class="space-grotesk">Username</span>
+					<i></i>
+				</div>
+				<div class="inputbox">
+					<input
+						required="required"
+						type="password"
+						id="password"
+						autocomplete="current-password"
+					/>
+					<span class="space-grotesk">Password</span>
+					<i></i>
+				</div>
+				<div class="button-group">
+					<button type="button" id="login">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="30"
+							height="30"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="light-dark(#eff1f5, #1e1e2e)"
+							stroke-width="1.75"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="icon icon-tabler icons-tabler-outline icon-tabler-login-2"
+						>
+							<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+							<path
+								d="M9 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2"
+							/>
+							<path d="M3 12h13l-3 -3" />
+							<path d="M13 15l3 -3" /></svg
+						>Login
+					</button>
+					<button type="button" id="logout">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="28"
+							height="30"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="light-dark(#eff1f5, #1e1e2e)"
+							stroke-width="1.75"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="icon icon-tabler icons-tabler-outline icon-tabler-logout"
+						>
+							<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+							<path
+								d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"
+							/>
+							<path d="M9 12h12l-3 -3" />
+							<path d="M18 15l3 -3" /></svg
+						>Logout
+					</button>
+				</div>
+			</form>
+			<div id="status"><h5>🛜</h5></div>
+		</div>
+	</body>
+</html>

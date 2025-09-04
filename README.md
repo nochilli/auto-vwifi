@@ -1,90 +1,68 @@
-# Pronto Auto Login
 
-<p align="center">
-  <img src="icon128.png" alt="Pronto Auto Login Logo" width="128"/>
-</p>
+<div align="center">
+    <img src="https://files.catbox.moe/tzk1xp.png"  alt="Auto VIT Wi-Fi"/>
+    <h1>Auto VIT Wi-Fi</h1>
+    <h3>VIT Network Portal Autologin </h3>
+</div>
 
-A Chrome extension that automatically logs you into VOLSBB (VIT College WiFi). Save your credentials once and login with a single click.
+***
+
+Never login to VIT Wi-Fi again! 
+
+Auto VIT Wi-Fi is a sleek browser extension that detects if you're connected to VIT Wi-Fi and automatically logs in to the network portal on startup ensuring that you're always connected to VIT Wi-Fi.
+
+***
+
+<video class="ignore" src="https://github.com/user-attachments/assets/5f213a84-23dc-45c6-9619-1cada7eb258d"></video>
+
+***
 
 ## Features
 
-- 🚀 One-click login to VOLSBB
-- 🔒 Securely store credentials
-- 📱 Clean, modern interface
-- 🔔 Desktop notifications for login status
+- 🌓 Dark & Light Themes
+
+- 🔋 Toggle Extension On / Off
+
+- 🚀 Fully Automated Login to VOLSBB
+
+- 🔒 Securely Stored Credentials
+
+- 📱 Sleek, Modern UI
+
+- 🔄️ Live status display
+  
+- 🔔 Desktop Notifications On Error
+
 - ⚡ Automatic form filling
 
 ## Installation
 
-### From Chrome Web Store
-1. Visit the [Chrome Web Store](https://chrome.google.com/webstore/detail/your-extension-id)
-2. Click "Add to Chrome"
+<a href='https://chromewebstore.google.com/detail/auto-vwifi'><img src='https://files.catbox.moe/e7oxgm.png' alt='Chrome' height=80/></a> 
+<a href="https://addons.mozilla.org/en-US/firefox/addon/auto-vwifi"><img src="https://files.catbox.moe/86st48.png" alt="Firefox" height=80/></a> 
 
-### Manual Installation (Development)
-1. Clone this repository
-   ```bash
-   git clone https://github.com/cybergla/pronto-auto-login.git
-   ```
-2. Open Chrome and navigate to `chrome://extensions`
-3. Enable "Developer mode" in the top-right corner
-4. Click "Load unpacked" and select the extension directory
-
-## How to Use
-
-1. Click the extension icon in your Chrome toolbar
-2. Enter your VOLSBB credentials
-3. Click "Save" to store your credentials
-4. Use "Login" button for one-click login
-5. Use "Logout" when you're done
 
 ## Privacy & Security
 
-- Credentials are stored locally in Chrome's secure storage
+- Credentials are stored locally in the browser's secure storage
+
 - No data is transmitted to external servers
+
 - All communication is directly with the VOLSBB authentication server
-
-## Development
-
-### Project Structure
-
-```
-pronto-auto-login/
-├── manifest.json # Extension configuration
-├── popup.html # Extension popup interface
-├── popup.js # Popup logic
-├── content.js # Page interaction logic
-├── service_worker.js # Background processes
-└── icons/ # Extension icons
-```
-
-### Building from Source
-1. Make your changes
-2. Test using "Load unpacked" in Chrome
-3. Package using Chrome's "Pack Extension"
 
 ## Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+Open a Pull Request
 
 ## Credits
 
-- Icons from [Noun Project](https://thenounproject.com) by Remy Medard and Alex Auda Samora
-- Built with ❤️ by [Tanay Deshmukh](https://github.com/cybergla)
+- Icons from [Tabler](https://tabler.io/icons)
+
+- Forked from [cybergla/pronto-auto-login/](https://github.com/cybergla/pronto-auto-login/)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
-
-## Version History
-
-- v0.3.0 - Current stable release for Manifest V3
-- v0.2.6 - Last release for Manifest V2 (will be deprecated soon)
-- [View all versions](https://github.com/cybergla/pronto-auto-login/releases)
+This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details
 
 ## Support
 
-Found a bug? [Create an issue](https://github.com/cybergla/pronto-auto-login/issues)
+Found a bug? [Create an issue](https://github.com/nochilli/auto-vwifi/issues)
