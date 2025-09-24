@@ -1,5 +1,5 @@
 function setStatus(val) {
-	document.querySelector('h5').textContent = val;
+	document.querySelector("h5").textContent = val;
 }
 
 document.addEventListener(
@@ -9,7 +9,7 @@ document.addEventListener(
 		var loginButton = document.getElementById("login");
 		var logoutButton = document.getElementById("logout");
 		enabled = "#000";
-		//get creds from storage
+
 		chrome.storage.local.get(null, function (data) {
 			if (data.username != (undefined || null)) {
 				document.getElementById("username").value = data.username;
@@ -19,7 +19,6 @@ document.addEventListener(
 			}
 		});
 
-		// Set up message listener once
 		chrome.runtime.onMessage.addListener(function (request) {
 			if (request.login_success) setStatus("✅ Logged in");
 			else if (request.network_error) setStatus("⛔ Network Error ⛔");
@@ -27,17 +26,15 @@ document.addEventListener(
 			else if (request.already_logged_in) setStatus("🛜 Logged in");
 			else if (request.login_timed_out) setStatus("🚧 Login Timed Out");
 			else if (request.quota_over) setStatus("🚧 Quota Exceeded");
-			else if (request.empty_creds) setStatus("⛔ Invalid credentials ⛔");
 			else if (!request.logout_success) setStatus("🛜 Logged out");
-			else if (!request.login_success) setStatus("⛔ Invalid credentials ⛔");
+			else if (request.empty_creds || !request.login_success)
+				setStatus("⛔ Invalid credentials ⛔");
 			else if (!request.logout_success || request.logout_unknown_error)
 				setStatus("⛔ Logout Error ⛔");
 		});
 
-		// Login button click
 		loginButton.addEventListener("click", function () {
 			setStatus("🚧 Logging in");
-
 			var f = document.getElementById("form1");
 			username = f.elements["username"].value;
 			password = f.elements["password"].value;
@@ -53,19 +50,17 @@ document.addEventListener(
 			});
 		});
 
-		// Logout button click
 		logoutButton.addEventListener("click", function () {
 			setStatus("🚧 Logging out");
 			chrome.runtime.sendMessage({ logout: true });
 		});
-		// power button
+
 		enableButton.addEventListener("click", function () {
 			enabled = enabled == "#77d458" ? "#e77979" : "#77d458";
-      console.log(enabled);
 			chrome.storage.local.set({ enable: enabled });
 			document.getElementById("enable").style.backgroundColor = enabled;
 
-			if (enabled==="#77d458") setStatus("✅ Autologin Enabled");
+			if (enabled === "#77d458") setStatus("✅ Autologin Enabled");
 			else setStatus("⛔ Autologin Disabled");
 		});
 	},

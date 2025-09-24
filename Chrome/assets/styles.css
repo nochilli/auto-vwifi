@@ -42,7 +42,7 @@
 
 body {
 	background: light-dark(#eff1f5, #1e1e2e);
-	font-size: 15px;   
+	font-size: 15px;
 	align-items: center;
 	width: 30%;
 }
@@ -53,8 +53,10 @@ body {
 	width: auto;
 }
 
-form{
-	min-width: 285px; padding-top: 25px; border-top: 1px solid light-dark(#96c6c3, #acb0be);
+form {
+	min-width: 285px;
+	padding-top: 25px;
+	border-top: 1px solid light-dark(#96c6c3, #acb0be);
 }
 
 input {
@@ -120,7 +122,7 @@ input[type="password"] {
 .button-group {
 	display: grid;
 	grid-template-columns: auto auto auto auto;
-	justify-content:space-evenly;
+	justify-content: space-evenly;
 	margin-top: 20px;
 	margin-left: 15px;
 }
@@ -161,8 +163,7 @@ button {
 }
 
 #enable {
-	/* grid-column: 9 / span 1; */
-	align-items:inherit;
+	align-items: inherit;
 	width: 34px;
 	height: 30px;
 	border-radius: 15px;

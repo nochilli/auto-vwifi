@@ -2,6 +2,9 @@ remote_theme: devich/quick@0.0.1
 bg_color: dark
 theme_color: azure
 title: Auto VIT Wi-Fi
-description: Auto VIT Wi-Fi is a sleek browser extension that detects if you're connected to VIT Wi-Fi and automatically logs in to the network portal
+description: Never login to VIT Wi-Fi again! Auto VIT Wi-Fi is a sleek browser extension that detects if you're on VIT Wi-Fi and automatically logs in to the network portal on startup ensuring that you're always connected to VIT Wi-Fi!
 
-keywords: Auto VWIFI, Autologin, Firefox, Chrome, VIT, Auto VIT WIFI, phc.prontonetworks.com
+
+
+
+keywords: Auto VWIFI, Autologin, Firefox, Chrome, VIT, Auto VIT WIFI, phc.prontonetworks.com, VIT Vellore

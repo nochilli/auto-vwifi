@@ -1,8 +1,6 @@
-browser.runtime.onInstalled.addListener(() => {
-	if (details.reason == "install") {
-		browser.tabs.create({
-			url: "https://nochilli.github.io/auto-vwifi",
-		});
+browser.runtime.onInstalled.addListener((details) => {
+	if (details.reason === "install") {
+		browser.tabs.create({ url: "https://nochilli.github.io/auto-vwifi/" });
 	}
 });
 
@@ -20,34 +18,45 @@ browser.runtime.onMessage.addListener(function (request) {
 	if (request.logout == true) {
 		logout();
 	}
+	if (request.redirect) {
+		browser.storage.local.set({ sessionID: request.redirect }, function () {});
+		browser.tabs.query(
+			{ url: "*://phc.prontonetworks.com/*" },
+			function (tabs) {
+				browser.tabs.update(tabs[0].id, {
+					url: browser.runtime.getURL("success.html"),
+				});
+			}
+		);
+	}
 });
 
 var opt_login_timeout = {
 	type: "basic",
 	title: "⛔ Request Timed Out",
 	message: "Please check your connection or try again later",
-	iconUrl: "/assets/icon128.png",
+	iconUrl: "/assets/vwifi128.png",
 };
 
-var opt_no_wifi = {
+var opt_other_network = {
 	type: "basic",
-	title: "⛔ Wi-Fi Disconnected",
-	message: "Please check your connection",
-	iconUrl: "/assets/icon128.png",
+	title: "⛔ You're Not Connected To VIT Wi-Fi!",
+	message: "Auto VIT Wi-Fi only works when connected to VIT Wi-Fi",
+	iconUrl: "/assets/vwifi128.png",
 };
 
 var opt_network_changed = {
 	type: "basic",
 	title: "⛔ Network Changed",
 	message: "Please try again later",
-	iconUrl: "/assets/icon128.png",
+	iconUrl: "/assets/vwifi128.png",
 };
 
 var opt_name_not_resolved = {
 	type: "basic",
 	title: "⛔ Network Error",
-	message: "Try disconnecting and reconnecting to VOLSBB",
-	iconUrl: "/assets/icon128.png",
+	message: "Try reconnecting to VIT Wi-Fi",
+	iconUrl: "/assets/vwifi128.png",
 };
 
 async function startup() {
@@ -81,7 +90,7 @@ async function startup() {
 
 function logout() {
 	fetch("http://phc.prontonetworks.com/cgi-bin/authlogout", {
-		method: "GET",
+		method: "POST",
 		mode: "cors",
 	})
 		.then((response) => {
@@ -151,7 +160,6 @@ function login(firstRun, formUser, formPassword) {
 			signal: signal,
 		})
 			.then((response) => {
-				console.log(response);
 				if (!response.ok) {
 					console.error(response.text());
 					throw new Error("Network response was not ok");
@@ -159,25 +167,19 @@ function login(firstRun, formUser, formPassword) {
 				return response.text();
 			})
 			.then((responseText) => {
-				var patt_success = /WiFi Access Granted/i;
-				var patt_already = /already logged in/i;
-				var patt_quota_over = /quota is over/i;
-				var patt_sorry = /sorry/i;
-				var patt_tryAgain = /try again/i;
-
-				if (patt_success.test(responseText)) {
+				if (/successful pronto authentication/i.test(responseText)) {
 					browser.runtime.sendMessage({ login_success: true });
 					return 0;
-				} else if (patt_quota_over.test(responseText)) {
+				} else if (/quota is over/i.test(responseText)) {
 					browser.runtime.sendMessage({ quota_over: true });
 					return 2;
 				} else if (
-					patt_sorry.test(responseText) &&
-					patt_tryAgain.test(responseText)
+					/sorry/i.test(responseText) &&
+					/try again/i.test(responseText)
 				) {
 					browser.runtime.sendMessage({ login_success: false });
 					return 1;
-				} else if (patt_already.test(responseText)) {
+				} else if (/already logged in/i.test(responseText)) {
 					if (!firstRun) {
 						browser.runtime.sendMessage({ already_logged_in: true });
 						return 3;
@@ -208,15 +210,12 @@ function login(firstRun, formUser, formPassword) {
 
 browser.webRequest.onErrorOccurred.addListener(
 	function (details) {
-		if (details.error == "net::ERR_INTERNET_DISCONNECTED") {
+		if (details.error == "net::ERR_INTERNET_DISCONNECTED")
 			showNotification("id_no_wifi", opt_no_wifi);
-		}
-		if (details.error == "net::ERR_NETWORK_CHANGED") {
+		if (details.error == "net::ERR_NETWORK_CHANGED")
 			showNotification("id_net_changed", opt_network_changed);
-		}
-		if (details.error == "net::ERR_NAME_NOT_RESOLVED") {
-			showNotification("id_name_not_resolved", opt_name_not_resolved);
-		}
+		if (details.error == "net::ERR_NAME_NOT_RESOLVED")
+			showNotification("id_name_not_resolved", opt_other_network);
 	},
 	{
 		urls: ["*://*/*"],

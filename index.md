@@ -1,16 +1,27 @@
+<style>
+    @media (max-width: 600px) {
+        #vid,
+        #txt {
+            width: 400px !important;
+            height: auto;
+        }
+    }
+</style>
+
 <div align="center">
-    <img src="https://files.catbox.moe/tzk1xp.png"  alt="Auto VIT Wi-Fi"/>
-    <h1 style="color: var(--pico-primary)">Auto VIT Wi-Fi</h1>
-    <h3>VIT Network Portal Autologin</h3>
-<hr>
-<h4>Never login to VIT Wi-Fi again!</h4>
-<p>
-Auto VIT Wi-Fi is a sleek browser extension that detects if you're on VIT Wi-Fi<br>and automatically logs in to the network portal on startup ensuring that you're always connected to VIT Wi-Fi!
-
-</p>
-
-<video align="center" width="385" height="400" autoplay controls muted>
-<source src="https://files.catbox.moe/6cnw53.mp4" type="video/mp4">
+	<img src="https://files.catbox.moe/tzk1xp.png" alt="Auto VIT Wi-Fi" />
+	<h1 style="color: var(--pico-primary)">Auto VIT Wi-Fi</h1>
+	<h3>Never login to VIT Wi-Fi again!</h3>
+	<hr />
+	<div id="txt" style="max-width: 1000px">
+		<p>
+			Auto VIT Wi-Fi is a sleek browser extension that detects if you're on VIT
+			Wi-Fi and automatically logs in to the network portal on startup ensuring
+			you're always connected to VIT Wi-Fi!
+		</p>
+	</div>
+<video id="vid" align="center" width="800" height="540" autoplay controls muted>
+<source src="https://files.catbox.moe/nbcrtd.mp4" type="video/mp4">
 </video>
 </div>
 
@@ -18,21 +29,21 @@ Auto VIT Wi-Fi is a sleek browser extension that detects if you're on VIT Wi-Fi<
 
 ## Features
 
-- 🌓 Dark & Light Themes
-
-- 🔋 Toggle Extension On / Off
-
-- 🚀 Fully Automated Login to VOLSBB
-
-- 🔒 Securely Stored Credentials
-
 - 📱 Sleek, Modern UI
 
-- 🔄️ Live status display
-  
-- 🔔 Desktop Notifications On Error
+- 🚀 Fully Automated Login Process 
 
-- ⚡ Automatic form filling
+- 🔄️ Live Status Display
+
+- 🪪 Custom Success Screen
+
+- 🌓 Dark & Light Themes
+
+- 🔒 Securely Stored Credentials
+  
+- 🔋 Toggle Extension On / Off
+  
+- 🔔 Notification On Error
 
 ## Installation
 
@@ -41,11 +52,11 @@ Auto VIT Wi-Fi is a sleek browser extension that detects if you're on VIT Wi-Fi<
 
 ## Privacy & Security
 
-- Credentials are stored locally in the browser's secure storage
+- Credentials stored securely in the browser's local storage
 
-- No data is transmitted to external servers
-
-- All communication is directly with the VOLSBB authentication server
+- Communication only with VIT's authentication server
+  
+- Zero data transmitted to external servers
 
 ## License
 
@@ -63,4 +74,4 @@ Auto VIT Wi-Fi is licensed under the [GPL-3.0 License](LICENSE)
 
 - Logo: [Freepik](https://www.freepik.com/icons)
 
-- Forked from [cybergla/pronto-auto-login/](https://github.com/cybergla/pronto-auto-login/)
+- Based on [pronto-auto-login](https://github.com/cybergla/pronto-auto-login/)
