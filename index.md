@@ -21,7 +21,7 @@
 		</p>
 	</div>
 <video id="vid" align="center" width="800" height="540" autoplay controls muted>
-<source src="https://files.catbox.moe/nbcrtd.mp4" type="video/mp4">
+<source src="https://files.catbox.moe/meq03a.mp4" type="video/mp4">
 </video>
 </div>
 
@@ -35,7 +35,7 @@
 
 - 🔄️ Live Status Display
 
-- 🪪 Custom Success Screen
+- 🪪 Login Success Screen
 
 - 🌓 Dark & Light Themes
 
@@ -65,7 +65,7 @@ Auto VIT Wi-Fi is licensed under the [GPL-3.0 License](LICENSE)
 ## Support
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-<a style="gap:10px" class="github-button" href="https://github.com/nochilli/auto-vwifi" data-color-scheme="no-preference: light; light: light; dark: dark_dimmed;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="nochilli/auto-vwifi on GitHub">Star nochilli/auto-vwifi </a>
+<a style="gap:10px" class="github-button" href="https://github.com/nochilli/auto-vwifi" data-color-scheme="no-preference: light; light: light; dark: dark_dimmed;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="nochilli/auto-vwifi on GitHub">nochilli/auto-vwifi </a>
 <a style="gap:10px" class="github-button" href="https://github.com/nochilli/auto-vwifi/issues" data-color-scheme="no-preference: light; light: light; dark: dark_dimmed;" data-icon="octicon-issue-opened" data-size="large" data-show-count="true" aria-label="Issue nochilli/auto-vwifi on GitHub">Raise an issue</a>
 
 ## Credits
