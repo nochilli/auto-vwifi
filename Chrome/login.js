@@ -25,6 +25,14 @@ chrome.storage.local.get(null, function (data) {
 			}
 
 			try {
+				var url = document.querySelector('a.button').href
+				if (url != undefined)
+					chrome.runtime.sendMessage({ redirect: url });
+			} catch (e) {
+				console.log(e);
+			}
+
+			try {
 				var err2 = document.getElementsByName("dynamicMacAuth")[0];
 
 				var patt1 = /Sorry, please check/i;

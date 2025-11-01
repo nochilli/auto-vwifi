@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
 	"name": "Auto VIT Wi-Fi",
-	"version": "1.2",
+	"version": "1.3",
 	"description": "Never login to VIT Wi-Fi again! This extension automatically logs you into VIT's network portal",
 	"icons": {
 		"16": "assets/vwifi16.png",
